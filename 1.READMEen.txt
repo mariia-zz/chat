@@ -1,0 +1,39 @@
+Chat - you can use it to exchange text messages.
+
+Classes:
+
+- Server - the main class of the server, the application is launched from it
+- MessageType - enum, which is responsible for the type of messages sent between
+
+client and server
+- Message - the class responsible for forwarded messages
+- Connection - the class of connection between the client and the server
+- ConsoleHelper - a helper class for reading or writing to the console
+
+Highlights of the client-server communication protocol:
+- When a new client wants to connect to the server, the server should ask for a name
+
+client.
+- When the client receives a name request from the server he must send his name
+
+server.
+- When the server receives the client's name, it must accept this name or request
+
+new.
+- When a new client is added to the chat, the server should inform the others
+
+to the participants about the new client.
+- When the client leaves the chat, the server should inform the rest of the participants about it.
+- When the server receives a text message from the client, it should forward it
+
+all other chat participants.
+
+The Connection class acts as a wrapper over the java.net.Socket class,
+which is able to serialize and deserialize objects of type Message into a socket.
+
+Each participant receives information about the other participants when he enters the chat.
+
+There is also a bot in the application that can give information about the date.
+Understands commands: date, day, month, year, time, hour, minutes, seconds.
+
+The ClientGuiView GUI class uses the javax.swing library.
